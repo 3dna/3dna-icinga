@@ -17,6 +17,7 @@ class icinga::server::params {
       $objects_dir = "/etc/icinga/objects"
       $package = 'icinga'
       $service = 'icinga'
+      $icinga_user = 'nagios'
     }
     default: {
       fail("${::osfamily} not supported, please submit a pull request")

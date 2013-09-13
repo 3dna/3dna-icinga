@@ -30,7 +30,7 @@ class icinga::server::config (
   }
 
   file { "${icinga::server::params::objects_dir}/*":
-    user => $icinga::server::params::icinga_user,
+    owner => $icinga::server::params::icinga_user,
     mode => 0640,
   }
 
