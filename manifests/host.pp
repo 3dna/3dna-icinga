@@ -22,7 +22,7 @@
 define icinga::host (
   $address = undef,
   $target = "${icinga::server::params::objects_dir}/${name}_host.cfg",
-  $alias = undef,
+  $icinga_alias = undef,
   $notifications_enabled = undef,
   $event_handler_enabled = undef,
   $flap_detection_enabled = undef,
@@ -50,7 +50,7 @@ define icinga::host (
   nagios_host { $name:
     target                       => $target,
     address                      => $address,
-    alias                        => $alias,
+    alias                        => $icinga_alias,
     notifications_enabled         => $notifications_enabled,
     event_handler_enabled        => $event_handler_enabled,
     flap_detection_enabled       => $flap_detection_enabled,
