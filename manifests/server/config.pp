@@ -30,5 +30,5 @@ class icinga::server::config (
   }
 
   Icinga::Host <<| |>>
-  #Icinga::Service <<| |>>
+  Icinga::Service <<| |>>
 }
