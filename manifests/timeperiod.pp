@@ -16,7 +16,7 @@
 #
 define icinga::timeperiod (
   $timeperiod_name = $name,
-  $target          = "${icinga::server::params::objects_dir}/timeperiod_${name}_.cfg",
+  $target          = "${icinga::server::params::objects_dir}/timeperiod_${name}.cfg",
   $ensure          = undef,
   $icinga_alias    = undef,
   $exclude         = undef,
