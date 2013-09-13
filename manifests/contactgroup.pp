@@ -17,6 +17,7 @@
 define icinga::contactgroup (
   $target               = "${icinga::server::params::objects_dir}/contactgroup_${name}.cfg",
   $icinga_alias         = undef,
+  $contactgroup_name    = undef,
   $ensure               = undef,
   $contactgroup_members = undef,
   $members              = undef,
@@ -35,6 +36,7 @@ define icinga::contactgroup (
   nagios_contact { $name:
     alias                => $icinga_alias,
     target               => $target,
+    contactgroup_name    => $contactgroup_name,
     ensure               => $ensure,
     contactgroup_members => $contactgroup_members,
     members              => $members,
