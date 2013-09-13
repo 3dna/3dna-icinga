@@ -43,5 +43,6 @@ define icinga::contactgroup (
     provider             => $provider,
     register             => $register,
     use                  => $use,
+    notify               => Class['::icinga::server::service'],
   }
 }

@@ -77,5 +77,6 @@ define icinga::contact (
     service_notifications_enabled => $service_notifications_enabled,
     target                        => $target,
     use                           => $use,
+    notify               => Class['::icinga::server::service'],
   }
 }

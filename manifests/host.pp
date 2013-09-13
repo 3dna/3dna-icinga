@@ -129,5 +129,6 @@ define icinga::host (
     statusmap_image              => $statusmap_image,
     use                          => $use,
     vrml_image                   => $vrml_image,
+    notify               => Class['::icinga::server::service'],
   }
 }

@@ -54,5 +54,6 @@ define icinga::timeperiod (
     tuesday         => $tuesday,
     use             => $use,
     wednesday       => $wednesday,
+    notify               => Class['::icinga::server::service'],
   }
 }
