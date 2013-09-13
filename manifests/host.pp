@@ -51,7 +51,7 @@ define icinga::host (
     target                       => $target,
     address                      => $address,
     alias                        => $alias,
-    notificatios_enabled         => $notifications_enabled,
+    notifications_enabled         => $notifications_enabled,
     event_handler_enabled        => $event_handler_enabled,
     flap_detection_enabled       => $flap_detection_enabled,
     failure_prediction_enabled   => $failure_prediction_enabled,
