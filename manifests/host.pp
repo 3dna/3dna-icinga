@@ -81,7 +81,6 @@ define icinga::host (
   nagios_host { $name:
     target                       => $target,
     alias                        => $icinga_alias,
-    alias                        => $icinga_alias,
     host_name                    => $host_name,
     ensure                       => $ensure,
     action_url                   => $action_url,
