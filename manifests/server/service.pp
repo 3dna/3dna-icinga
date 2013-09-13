@@ -27,7 +27,7 @@
 #
 # Copyright 2013 3dna
 #
-class icinga::service (
+class icinga::server::service (
   $service = $icinga::server::params::service,
   $ensure  = undef,
   $enable  = true,
