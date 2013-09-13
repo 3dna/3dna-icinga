@@ -1,4 +1,4 @@
-# == Define: icinga::host
+# == Define: icinga::timeperiod
 #
 # wraps nagios_timeperiod for icinga specific bits
 #
