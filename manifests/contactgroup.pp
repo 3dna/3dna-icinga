@@ -33,7 +33,7 @@ define icinga::contactgroup (
     require => Nagios_contactgroup[$name],
   }
 
-  nagios_contact { $name:
+  nagios_contactgroup { $name:
     alias                => $icinga_alias,
     target               => $target,
     contactgroup_name    => $contactgroup_name,
