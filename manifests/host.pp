@@ -21,7 +21,7 @@
 #
 define icinga::host (
   $address = undef,
-  $target = "${icinga::server::params::objects_dir}/${name}_host.cfg",
+  $target = "${icinga::server::params::objects_dir}/host_${name}.cfg",
   $icinga_alias = undef,
   $notifications_enabled = undef,
   $event_handler_enabled = undef,
