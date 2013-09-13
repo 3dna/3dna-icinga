@@ -13,8 +13,11 @@
 class icinga::params {
   case $::osfamily {
     'Debian': {
+      $conf_dir = "/etc/icinga"
+      $objects_dir = "/etc/icinga/objects"
     }
     default: {
       fail("${::osfamily} not supported, please submit a pull request")
     }
+  }
 }

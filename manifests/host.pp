@@ -21,7 +21,9 @@
 #
 define icinga::host (
 ) {
+  include icinga::server::params
+
   nagios_host { $name:
-    target => "/etc/icinga/objects/${name}_host.cfg",
+    target => "${icinga::server::params::objects_dir}/${name}_host.cfg",
   }
 }
