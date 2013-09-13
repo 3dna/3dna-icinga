@@ -1,4 +1,4 @@
-# == Class: icinga::service
+# == Class: icinga::server::service
 #
 # manages the icinga service as part of the icinga module. should not be included directly
 #
@@ -28,10 +28,10 @@
 # Copyright 2013 3dna
 #
 class icinga::service (
-  $service = $icinga::params::service,
+  $service = $icinga::server::params::service,
   $ensure  = undef,
   $enable  = true,
-) {
+) inherits icinga::server::params {
   service { $service:
     ensure => $ensure,
     enable => $enable,

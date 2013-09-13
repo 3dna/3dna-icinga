@@ -1,4 +1,4 @@
-# == Class: icinga::params
+# == Class: icinga::server::params
 #
 # OS specific params for the icinga module
 #
@@ -10,11 +10,13 @@
 #
 # Copyright 2013 3dna Corp
 #
-class icinga::params {
+class icinga::server::params {
   case $::osfamily {
     'Debian': {
       $conf_dir = "/etc/icinga"
       $objects_dir = "/etc/icinga/objects"
+      $package = 'icinga'
+      $service = 'icinga'
     }
     default: {
       fail("${::osfamily} not supported, please submit a pull request")

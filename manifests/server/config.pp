@@ -21,9 +21,6 @@
 # Copyright 2013 3dna
 #
 class icinga::server::config (
-  $service = $icinga::server::params::service,
-  $ensure  = undef,
-  $enable  = true,
 ) inherits icinga::server::params {
 
   file { $icinga::server::params::objects_dir:
