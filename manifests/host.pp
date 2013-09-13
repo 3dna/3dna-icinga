@@ -20,6 +20,10 @@
 # Copyright 2013 3dna Corp
 #
 define icinga::host (
+  $target = "${icinga::server::params::objects_dir}/${name}_host.cfg",
+  $max_check_attempts = 3,
+  $address = $::ipaddress,
+  $alias = $::fqdn,
 ) {
   include icinga::server::params
 
@@ -30,6 +34,9 @@ define icinga::host (
   }
 
   nagios_host { $name:
-    target => "${icinga::server::params::objects_dir}/${name}_host.cfg",
+    target             => $target,
+    max_check_attempts => $max_check_attempts,
+    address            => $address,
+    alias              => $alias,
   }
 }
