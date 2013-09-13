@@ -20,10 +20,10 @@
 # Copyright 2013 3dna Corp
 #
 define icinga::host (
+  $address,
   $target = "${icinga::server::params::objects_dir}/${name}_host.cfg",
   $max_check_attempts = 3,
-  $address = $::ipaddress,
-  $alias = $::fqdn,
+  $alias = $name,
 ) {
   include icinga::server::params
 
