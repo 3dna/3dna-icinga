@@ -18,7 +18,7 @@
 # Copyright 2013 3dna
 #
 class icinga::server::install (
-  $package = $icinga::server::params::package
+  $package = $icinga::server::params::package,
   $nrpe_plugin_package = $icinga::server::params::nrpe_plugin_package
 ) inherits icinga::server::params {
   package { [$package,$nrpe_plugin_package]:
