@@ -1,11 +1,13 @@
 # == Class: icinga::server::install
 #
-# install the icinga package, meant to be used only as part of the 'icinga' class
+# install the icinga server packages, meant to be used only as part of the 'icinga' class
 #
 # === Parameters
 #
-# [*$icinga::params::package*]
-#   the name of the package
+# [*package*]
+#   the name of the main icinga server package
+# [*nrpe_plugin_package*]
+#   the name of the package for the nrpe plugin
 #
 # === Authors
 #
@@ -17,8 +19,9 @@
 #
 class icinga::server::install (
   $package = $icinga::server::params::package
+  $nrpe_plugin_package = $icinga::server::params::nrpe_plugin_package
 ) inherits icinga::server::params {
-  package { $package:
+  package { [$package,$nrpe_plugin_package]:
     ensure => installed,
   }
 }

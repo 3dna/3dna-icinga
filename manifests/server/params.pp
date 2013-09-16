@@ -16,6 +16,7 @@ class icinga::server::params {
       $conf_dir = "/etc/icinga"
       $objects_dir = "/etc/icinga/objects"
       $package = 'icinga'
+      $nrpe_plugin_package = 'nagios-nrpe-plugin'
       $service = 'icinga'
       $icinga_user = 'nagios'
     }
