@@ -41,6 +41,7 @@ define icinga::contact (
   $service_notifications_enabled = undef,
   $target                        = "${icinga::server::params::objects_dir}/contact_${name}.cfg",
   $use                           = undef,
+  $notify                        = Class['::icinga::server::service'],
 ) {
   include icinga::server::params
 
@@ -77,6 +78,6 @@ define icinga::contact (
     service_notifications_enabled => $service_notifications_enabled,
     target                        => $target,
     use                           => $use,
-    notify               => Class['::icinga::server::service'],
+    notify                        => $notify,
   }
 }

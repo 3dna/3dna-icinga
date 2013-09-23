@@ -69,6 +69,7 @@ define icinga::service (
   $servicegroups                = undef,
   $stalking_options             = undef,
   $use                          = undef,
+  $notify                       = Class['::icinga::server::service'],
 ) {
   include icinga::server::params
 
@@ -128,5 +129,6 @@ define icinga::service (
     servicegroups                => $servicegroups,
     stalking_options             => $stalking_options,
     use                          => $use,
+    notify                       => $notify,
   }
 }

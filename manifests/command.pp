@@ -21,6 +21,7 @@ define icinga::command (
   $command_line = undef,
   $poller_tag   = undef,
   $use          = undef,
+  $notify       = Class['::icinga::server::service'],
 ) {
   include icinga::server::params
 
@@ -32,7 +33,7 @@ define icinga::command (
 
   nagios_command { $name:
     target       => $target,
-    notify       => Class['::icinga::server::service'],
+    notify       => $notify,
     ensure       => $ensure,
     command_line => $command_line,
     poller_tag   => $poller_tag,

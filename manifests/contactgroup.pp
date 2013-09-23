@@ -24,6 +24,7 @@ define icinga::contactgroup (
   $provider             = undef,
   $register             = undef,
   $use                  = undef,
+  $notify               = Class['::icinga::server::service'],
 ) {
   include icinga::server::params
 
@@ -43,6 +44,6 @@ define icinga::contactgroup (
     provider             => $provider,
     register             => $register,
     use                  => $use,
-    notify               => Class['::icinga::server::service'],
+    notify               => $notify,
   }
 }
