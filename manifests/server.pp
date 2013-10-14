@@ -35,4 +35,13 @@ class icinga::server {
   include icinga::server::service
 
   Class['icinga::server::install'] -> Class['icinga::server::config'] ~> Class['icinga::server::service']
+
+  anchor {
+    'icinga::start': 
+      before => [Class['icinga::server::install'],Class['icinga::server::config']],
+      notify => Class['icinga::server::service'];
+    'icinga::end':
+      require => Class['icinga::server::service'];
+  }
+
 }
