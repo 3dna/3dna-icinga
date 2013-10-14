@@ -10,4 +10,4 @@ project_page ''
 ## Add dependencies, if any:
 # dependency 'username/name', '>= 1.2.0'
 dependency '3dna/nrpe', '>= 0.0.1'
-dependency 'puppetlabs/apache', '>= 0.8.0'
+dependency 'puppetlabs/stdlib', '>= 4.0.0'
