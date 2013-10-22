@@ -19,6 +19,8 @@ class icinga::server::params {
       $nrpe_plugin_package = 'nagios-nrpe-plugin'
       $service = 'icinga'
       $icinga_user = 'nagios'
+      $config_file = '/etc/icinga/icinga.cfg'
+      $icinga_path = '/usr/sbin/icinga'
     }
     default: {
       fail("${::osfamily} not supported, please submit a pull request")
