@@ -27,6 +27,7 @@ class icinga::server::config (
     ensure  => directory,
     purge   => true,
     recurse => true,
+    notify  => Class['icinga::server::configcheck'],
   }
 
   Icinga::Host <<| |>>
