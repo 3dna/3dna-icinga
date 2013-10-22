@@ -24,7 +24,7 @@ define icinga::contactgroup (
   $provider             = undef,
   $register             = undef,
   $use                  = undef,
-  $notify               = Class['::icinga::server::service'],
+  $notify               = Class['::icinga::server::configcheck'],
 ) {
   include icinga::server::params
 

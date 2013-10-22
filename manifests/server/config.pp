@@ -1,6 +1,6 @@
-# == Class: icinga::server::service
+# == Class: icinga::server::config
 #
-# manages the icinga server service as part of the icinga module. should not be included directly
+# manages the icinga config as part of the icinga module
 #
 # === Parameters
 #

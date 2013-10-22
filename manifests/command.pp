@@ -21,7 +21,7 @@ define icinga::command (
   $command_line = undef,
   $poller_tag   = undef,
   $use          = undef,
-  $notify       = Class['::icinga::server::service'],
+  $notify       = Class['::icinga::server::configcheck'],
 ) {
   include icinga::server::params
 

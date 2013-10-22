@@ -29,7 +29,7 @@ define icinga::timeperiod (
   $tuesday         = undef,
   $use             = undef,
   $wednesday       = undef,
-  $notify          = Class['::icinga::server::service'],
+  $notify          = Class['::icinga::server::configcheck'],
 
 ) {
   include icinga::server::params
