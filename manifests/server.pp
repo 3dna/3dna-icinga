@@ -32,7 +32,7 @@
 class icinga::server {
   include icinga::server::install
   include icinga::server::config
-  include icinga::server::configchekc
+  include icinga::server::configcheck
   include icinga::server::service
 
   Class['icinga::server::install'] -> Class['icinga::server::config'] Class['icinga::server::configcheck'] ~> Class['icinga::server::service']
