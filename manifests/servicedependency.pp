@@ -48,7 +48,7 @@ define icinga::servicedependency (
     target                        => $target,
     ensure                        => $ensure,
     dependency_period             => $dependency_period,
-    dependent_hostname            => $dependent_hostname,
+    dependent_host_name           => $dependent_host_name,
     dependent_hostgroup_name      => $dependent_hostgroup_name,
     dependent_service_description => $dependent_service_description,
     execution_failure_criteria    => $execution_failure_criteria,
