@@ -51,7 +51,7 @@ define icinga::hostgroup (
     action_url        => $action_url,
     icinga_alias      => $icinga_alias,
     group             => $group,
-    hostgroup_members => $hostgroup_members
+    hostgroup_members => $hostgroup_members,
     members           => $members,
     mode              => $mode,
     notes             => $notes,
