@@ -39,7 +39,7 @@ define icinga::hostgroup (
   file { $target:
     owner   => $icinga::server::params::icinga_user,
     mode    => 0644,
-    require => Nagios_host[$name],
+    require => Nagios_hostgroup[$name],
   }
 
   nagios_hostgroup { $name:
