@@ -49,7 +49,7 @@ define icinga::hostgroup (
     hostgroup_name    => $hostgroup_name,
     ensure            => $ensure,
     action_url        => $action_url,
-    icinga_alias      => $icinga_alias,
+    alias             => $icinga_alias,
     group             => $group,
     hostgroup_members => $hostgroup_members,
     members           => $members,
