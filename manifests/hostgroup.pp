@@ -20,19 +20,19 @@
 # Copyright 2014 3dna Corp
 #
 define icinga::hostgroup (
-  $hostgroup_name = $name,
-  $ensure     = undef,
-  $action_url = undef,
-  $icinga_alias = undef,
-  $hostgroup_members = undef,
-  $members = undef,
-  $notes = undof,
-  $notes_url = undef,
-  $provider = undef,
-  $realm = undef,
-  $register = undef,
-  $target       = "${icinga::server::params::objects_dir}/host_${name}.cfg",
-  $use = undef,
+  $hostgroup_name     = $name,
+  $ensure             = undef,
+  $action_url         = undef,
+  $icinga_alias       = undef,
+  $hostgroup_members  = undef,
+  $members            = undef,
+  $notes              = undef,
+  $notes_url          = undef,
+  $provider           = undef,
+  $realm              = undef,
+  $register           = undef,
+  $target             = "${icinga::server::params::objects_dir}/hostgroup_${name}.cfg",
+  $use                = undef,
 ) {
   include icinga::server::params
 
@@ -56,5 +56,6 @@ define icinga::hostgroup (
     register          => $register,
     target            => $target,
     use               => $use,
+    notify            => Class['::icinga::server::configcheck'],
   }
 }
