@@ -49,7 +49,7 @@ define icinga::hostgroup (
     alias             => $icinga_alias,
     hostgroup_members => $hostgroup_members,
     members           => $members,
-    notes           -  => $notes,
+    notes             => $notes,
     notes_url         => $notes_url,
     provider          => $provider,
     realm             => $realm,
