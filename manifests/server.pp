@@ -29,7 +29,11 @@
 #
 # Copyright 2013 3dna Corp
 #
-class icinga::server {
+class icinga::server (
+  $enable_notifications = '0',
+  $url_html_path = '/',
+  $url_stylesheets_path = '/'
+) {
   include icinga::server::install
   include icinga::server::config
   include icinga::server::configcheck

@@ -30,6 +30,24 @@ class icinga::server::config (
     notify  => Class['icinga::server::configcheck'],
   }
 
+  file { "${icinga::server::params::conf_dir}/icinga.cfg" :
+    ensure  => file,
+    owner   => 'root',
+    group   => 'root',
+    mode    => 0644,
+    content => template("icinga/icinga.cfg.erb"),
+    notify  => Class['icinga::server::configcheck'],
+  }
+
+  file { "${icinga::server::params::conf_dir}/cgi.cfg" :
+    ensure  => file,
+    owner   => 'root',
+    group   => 'root',
+    mode    => 0644,
+    content => template("icinga/cgi.cfg.erb"),
+    notify  => Class['icinga::server::configcheck'],
+  }
+
   Icinga::Host <<| |>>
   Icinga::Service <<| |>>
   Icinga::Serviceescalation <<| |>>
