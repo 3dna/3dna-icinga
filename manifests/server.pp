@@ -32,7 +32,7 @@
 class icinga::server (
   $enable_notifications = '0',
   $url_html_path = '/',
-  $url_stylesheets_path = '/'
+  $url_stylesheets_path = '/',
   $check_external_commands = false,
   $command_check_interval = '-1',
 ) {
