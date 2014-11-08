@@ -21,7 +21,7 @@
 # Copyright 2013 3dna
 #
 class icinga::server::config (
-) inherits icinga::server::params {
+) inherits icinga::server {
 
   file { $icinga::server::params::objects_dir:
     ensure  => directory,

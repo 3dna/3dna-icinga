@@ -35,7 +35,7 @@ class icinga::server (
   $url_stylesheets_path = '/',
   $check_external_commands = false,
   $command_check_interval = '-1',
-) {
+) inherits icinga::server::params {
   include icinga::server::install
   include icinga::server::config
   include icinga::server::configcheck
