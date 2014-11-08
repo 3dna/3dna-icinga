@@ -152,7 +152,8 @@ icinga_group=nagios
 # you will have to enable this.
 # Values: 0 = disable commands, 1 = enable commands
 
-check_external_commands=0
+check_external_commands=<%= @check_external_commands_bool ? '1' : '0' %>
+
 
 
 
@@ -170,7 +171,7 @@ check_external_commands=0
 # command file as often as possible.
 
 #command_check_interval=15s
-command_check_interval=-1
+command_check_interval=<%= @command_check_interval %>
 
 
 

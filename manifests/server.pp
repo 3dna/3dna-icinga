@@ -33,11 +33,16 @@ class icinga::server (
   $enable_notifications = '0',
   $url_html_path = '/',
   $url_stylesheets_path = '/'
+  $check_external_commands = false,
+  $command_check_interval = '-1',
 ) {
   include icinga::server::install
   include icinga::server::config
   include icinga::server::configcheck
   include icinga::server::service
+
+  $check_external_commands_bool = str2bool($check_external_commands)
+  
 
   Class['icinga::server::install'] -> Class['icinga::server::config'] Class['icinga::server::configcheck'] ~> Class['icinga::server::service']
 
