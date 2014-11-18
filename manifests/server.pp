@@ -36,10 +36,6 @@ class icinga::server (
   $check_external_commands = false,
   $command_check_interval = '-1',
 ) inherits icinga::server::params {
-  include icinga::server::install
-  include icinga::server::config
-  include icinga::server::configcheck
-  include icinga::server::service
 
   $check_external_commands_bool = str2bool($check_external_commands)
   
@@ -54,4 +50,8 @@ class icinga::server (
       require => Class['icinga::server::service'];
   }
 
+  include icinga::server::install
+  include icinga::server::config
+  include icinga::server::configcheck
+  include icinga::server::service
 }
