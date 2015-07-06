@@ -1206,10 +1206,10 @@ enable_flap_detection=<%= has_variable?("enable_flap_detection") ? @enable_flap_
 # an explanation of what this option does.  This option
 # has no effect if flap detection is disabled.
 
-low_service_flap_threshold=5.0
-high_service_flap_threshold=20.0
-low_host_flap_threshold=5.0
-high_host_flap_threshold=20.0
+low_service_flap_threshold=<%= has_variable?("low_service_flap_threshold") ? @low_service_flap_threshold : '5.0' %>
+high_service_flap_threshold=<%= has_variable?("high_service_flap_threshold") ? @high_service_flap_threshold : '20.0' %>
+low_host_flap_threshold=<%= has_variable?("low_host_flap_threshold") ? @low_host_flap_threshold : '5.0' %>
+high_host_flap_threshold=<%= has_variable?("high_host_flap_threshold") ? @high_host_flap_threshold : '20.0' %>
 
 
 
