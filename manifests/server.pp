@@ -34,6 +34,11 @@ class icinga::server (
   $url_html_path = '/',
   $url_stylesheets_path = '/',
   $check_external_commands = false,
+  $enable_flap_detection = '1',
+  $low_service_flap_threshold = '5.0',
+  $high_service_flap_threshold = '20.0',
+  $low_host_flap_threshold = '5.0',
+  $high_host_flap_threshold = '20.0',
   $command_check_interval = '-1',
 ) inherits icinga::server::params {
 
