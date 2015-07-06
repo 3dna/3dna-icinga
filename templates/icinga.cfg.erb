@@ -903,7 +903,7 @@ accept_passive_host_checks=1
 # service notifications when it is initially (re)started.
 # Values: 1 = enable notifications, 0 = disable notifications
 
-enable_notifications=<%= @enable_notifications %>
+enable_notifications=<%= has_variable?("enable_notifications") ? @enable_notifications : '1' %>
 
 
 
@@ -1197,7 +1197,7 @@ additional_freshness_latency=15
 # Values: 1 = enable flap detection
 #         0 = disable flap detection (default)
 
-enable_flap_detection=1
+enable_flap_detection=<%= has_variable?("enable_flap_detection") ? @enable_flap_detection : '1' %>
 
 
 
