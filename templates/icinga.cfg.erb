@@ -408,8 +408,9 @@ log_passive_checks=1
 # correctly.
 # Since this will break compatibility with existing log parsers,
 # it is intentionally disabled by default.
-
+<% if @enable_log_external_commands_user %>
 log_external_commands_user=0
+<% end %>
 
 
 
