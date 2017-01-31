@@ -31,6 +31,7 @@
 #
 class icinga::server (
   $enable_notifications = '0',
+  $enable_log_external_commands_user = true,
   $url_html_path = '/',
   $url_stylesheets_path = '/',
   $check_external_commands = false,
