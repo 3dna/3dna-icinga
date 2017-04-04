@@ -50,11 +50,10 @@ class icinga::server::config (
 
   if ($icinga::server::params::include_exported_hosts) {
     Icinga::Host <<| |>>
-  }
-  if ($icinga::server::params::include_exported_hosts and
-      $icinga::server::params::include_exported_services) {
-    Icinga::Service <<| |>>
-    Icinga::Serviceescalation <<| |>>
-    Icinga::Servicedependency <<| |>>
+    if ($icinga::server::params::include_exported_services) {
+      Icinga::Service <<| |>>
+      Icinga::Serviceescalation <<| |>>
+      Icinga::Servicedependency <<| |>>
+    }
   }
 }
