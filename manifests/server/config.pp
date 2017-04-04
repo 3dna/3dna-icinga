@@ -34,8 +34,8 @@ class icinga::server::config (
     ensure  => file,
     owner   => 'root',
     group   => 'root',
-    mode    => 0644,
-    content => template("icinga/icinga.cfg.erb"),
+    mode    => '0644',
+    content => template('icinga/icinga.cfg.erb'),
     notify  => Class['icinga::server::configcheck'],
   }
 
@@ -43,13 +43,17 @@ class icinga::server::config (
     ensure  => file,
     owner   => 'root',
     group   => 'root',
-    mode    => 0644,
-    content => template("icinga/cgi.cfg.erb"),
+    mode    => '0644',
+    content => template('icinga/cgi.cfg.erb'),
     notify  => Class['icinga::server::configcheck'],
   }
 
-  Icinga::Host <<| |>>
-  Icinga::Service <<| |>>
-  Icinga::Serviceescalation <<| |>>
-  Icinga::Servicedependency <<| |>>
+  if ($icinga::server::params::include_exported_hosts) {
+    Icinga::Host <<| |>>
+    if ($icinga::server::params::include_exported_services) {
+      Icinga::Service <<| |>>
+      Icinga::Serviceescalation <<| |>>
+      Icinga::Servicedependency <<| |>>
+    }
+  }
 }
