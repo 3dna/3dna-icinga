@@ -47,13 +47,4 @@ class icinga::server::config (
     content => template('icinga/cgi.cfg.erb'),
     notify  => Class['icinga::server::configcheck'],
   }
-
-  if ($icinga::server::params::include_exported_hosts) {
-    Icinga::Host <<| |>>
-    if ($icinga::server::params::include_exported_services) {
-      Icinga::Service <<| |>>
-      Icinga::Serviceescalation <<| |>>
-      Icinga::Servicedependency <<| |>>
-    }
-  }
 }

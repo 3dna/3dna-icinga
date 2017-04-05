@@ -21,8 +21,6 @@ class icinga::server::params {
       $icinga_user = 'nagios'
       $config_file = '/etc/icinga/icinga.cfg'
       $icinga_path = '/usr/sbin/icinga'
-      $include_exported_hosts = true
-      $include_exported_services = true
     }
     default: {
       fail("${::osfamily} not supported, please submit a pull request")
