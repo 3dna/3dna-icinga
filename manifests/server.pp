@@ -41,15 +41,15 @@ class icinga::server (
   $low_host_flap_threshold = '5.0',
   $high_host_flap_threshold = '20.0',
   $command_check_interval = '-1',
+  $include_exports = true,
 ) inherits icinga::server::params {
 
   $check_external_commands_bool = str2bool($check_external_commands)
-  
 
   Class['icinga::server::install'] -> Class['icinga::server::config'] Class['icinga::server::configcheck'] ~> Class['icinga::server::service']
 
   anchor {
-    'icinga::start': 
+    'icinga::start':
       before => [Class['icinga::server::install'],Class['icinga::server::config'],Class['icinga::server::configcheck']],
       notify => Class['icinga::server::service'];
     'icinga::end':
@@ -60,4 +60,7 @@ class icinga::server (
   include icinga::server::config
   include icinga::server::configcheck
   include icinga::server::service
+  if ($include_exports) {
+    include icinga::server::exports
+  }
 }

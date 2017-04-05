@@ -1,5 +1,5 @@
 name    '3dna-icinga'
-version '0.0.4'
+version '0.0.5'
 source 'git://github.com/3dna/3dna-icinga'
 author '3dna Corp'
 license 'BSD 3-clause License'
