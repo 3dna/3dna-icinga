@@ -36,7 +36,7 @@ define icinga::timeperiod (
 
   file { $target:
     owner   => $icinga::server::params::icinga_user,
-    mode    => 0644,
+    mode    => '0644',
     require => Nagios_timeperiod[$name],
   }
 

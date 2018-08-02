@@ -40,7 +40,7 @@ define icinga::servicedependency (
 
   file { $target:
     owner   => $icinga::server::params::icinga_user,
-    mode    => 0644,
+    mode    => '0644',
     require => Nagios_servicedependency[$name],
   }
 
